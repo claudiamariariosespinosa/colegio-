@@ -1,32 +1,43 @@
-import javax.swing.*;
 import java.util.Scanner;
 
-public class colegio {
+public class edades_estudiantes {
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        float edad[]=new float[0];
-float prom_estudiantes=0, media_menores=0;
-int estudiantes_cinco = 0;
-//arreglo\\
-        for (int contador=0;contador>0;contador++){
-            System.out.printf((contador+1)+"por favor digite una edad");
-            edad[contador]= entrada.nextFloat();
+        float[] numero = new float[10];
+        double media_estudiantes=0;
+        double prom_estudiantes = 0;
+        double conteo_cincos=0;
+        double alumnos = 0, edad = 0, edad2 = 0;
 
-        if (edad[contador]<5) {
-            media_menores +=edad[contador];
-            System.out.printf("la media de estudiantes menores de 5 años es  "+media_menores);
-        } else if (edad[contador]>5) {
-            prom_estudiantes*=edad[contador];
-            prom_estudiantes=prom_estudiantes/contador;
-            contador++;
-            System.out.printf("el promedio de estudiantes mayores de 5 años es "+ prom_estudiantes);
-        }
-else {
-    estudiantes_cinco++;
-            System.out.printf("la cantidad de estudiantes con 5 años es  "+contador);
+        System.out.printf("bienvenido al programa de el colegio");
+        System.out.printf("¿cuales son las edades de cuantos alumnos desea digitar?");
+        alumnos = entrada.nextDouble();
+        for (int i = 0; i < alumnos; i++) {
+            System.out.printf("cual es la edad del alumno");
+            edad = entrada.nextDouble();
+
+            if (edad>5){
+
+                edad = edad + edad2;
+                edad2 = edad;
+                prom_estudiantes = edad / alumnos;}
+                System.out.printf("el promedio de la edad de los alumnos es " + prom_estudiantes);
+            if (edad<5){
+                media_estudiantes=edad/i;}
+                System.out.printf("la media de los estudiantes es "+media_estudiantes);
+
+           if (edad==5) {
+               conteo_cincos++;}
+               System.out.printf("el numero de 5 es " + conteo_cincos);
+
+
+            }
+
 
         }
-        }
-
     }
-}
+
+
+
+
